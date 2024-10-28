@@ -1,18 +1,15 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 
-// connecting mongo DB
-mongoose.connect("mongodb://127.0.0.1:27017/user-roles-permission");
+// connecting to MongoDB using the URL from the environment variable
+const mongoDBUrl = process.env.MONGODB_URL;
 
+mongoose.connect(mongoDBUrl)
+    .then(() => console.log('MongoDB connected successfully'))
+    .catch(err => console.error('MongoDB connection error:', err));
 const connection = mongoose.connection
 
-connection.on("connected", () => {
-    console.log("Connected to Database.");
-})
 
-connection.once("error", (err) => {
-    console.log("Error while connecting mongo db:", err);
-})
 
 const express = require('express');
 const cors = require('cors');
