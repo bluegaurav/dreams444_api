@@ -4,7 +4,9 @@ const mongoose = require('mongoose');
 // connecting to MongoDB using the URL from the environment variable
 const mongoDBUrl = process.env.MONGODB_URL;
 console.log('mongoDBUrl',mongoDBUrl);
-mongoose.connect(mongoDBUrl)
+
+
+mongoose.connect('mongodb+srv://gauravkumarbhatra:l3InOlKT0170loEf@cluster0.xmwvq.mongodb.net/dreams444?retryWrites=true&w=majority&appName=Cluster0')
     .then(() => console.log('MongoDB connected successfully'))
     .catch(err => console.error('MongoDB connection error:', err));
 
