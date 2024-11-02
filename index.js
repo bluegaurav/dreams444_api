@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 
 // connecting to MongoDB using the URL from the environment variable
 const mongoDBUrl = process.env.MONGODB_URL;
-
+console.log('mongoDBUrl',mongoDBUrl);
 mongoose.connect(mongoDBUrl)
     .then(() => console.log('MongoDB connected successfully'))
     .catch(err => console.error('MongoDB connection error:', err));
-const connection = mongoose.connection
+
 
 
 
