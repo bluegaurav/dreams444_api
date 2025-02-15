@@ -41,7 +41,7 @@ app.use('/api/admin', adminRoute);
 const commonRoute = require('./routes/commonRoute');
 app.use('/api', commonRoute);
 
-const port = process.env.SERVER_PORT || 8000;
+const port = process.env.SERVER_PORT || 8080;
 
 app.listen(port, ()=>{
     console.log("Server is running on port:- "+port);
